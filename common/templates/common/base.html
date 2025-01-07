@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        :focus-visible {
+            outline-color: currentColor;
+            outline-style: solid;
+            outline-offset: .25rem;
+            outline-width: .25rem;
+        }
+
+        .was-validated input[aria-invalid="true"]:not([type="button"]):not([type="submit"]):not([type="reset"]),
+        .was-validated select[aria-invalid="true"],
+        .was-validated textarea[aria-invalid="true"] {
+            border: 2px solid red;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group:has([aria-invalid="true"]) {
+            & label {
+                color: red;
+            }
+
+            & .error {
+                color: red;
+            }   
+        }
+
+        .error {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .error-icon {
+            color: inherit;
+        }
+    </style>
+    {% block extra_head %}
+    {% endblock extra_head %}
+    <title>Django Accessible Forms</title>
+</head>
+
+<body>
+    {% block content %}
+    {% endblock content %}
+</body>
+
+</html>
