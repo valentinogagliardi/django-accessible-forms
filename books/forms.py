@@ -13,6 +13,15 @@ class BookForm(forms.ModelForm):
                 }
             )
 
+            # Set initial aria-invalid="false" to avoid screen readers
+            # announcing non-touched fields as invalid by default
+            if (
+                not field.widget.is_hidden
+                and field_name not in self.errors
+                and field.required
+            ):
+                field.widget.attrs.update({"aria-invalid": "false"})
+
     class Meta:
         model = Book
         fields = ["title", "publication_date", "author"]
