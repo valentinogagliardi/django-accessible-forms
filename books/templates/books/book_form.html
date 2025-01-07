@@ -1,0 +1,17 @@
+{% extends "common/base.html" %}
+
+{% block content %}
+<form class="{% if form.is_bound %}was-validated{% endif %}" method="post" novalidate>
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.title.as_field_group}}
+    </div>
+    <div class="form-group">
+        {{ form.publication_date.as_field_group}}
+    </div>
+    <div class="form-group">
+        {{ form.author.as_field_group}}
+    </div>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
