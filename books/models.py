@@ -13,6 +13,7 @@ class Author(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=200)
     publication_date = models.DateField()
+    description = models.TextField(blank=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
     def __str__(self):
