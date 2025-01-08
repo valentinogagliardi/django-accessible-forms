@@ -24,7 +24,15 @@ class BookForm(forms.ModelForm):
 
     class Meta:
         model = Book
-        fields = ["title", "publication_date", "author"]
+        fields = ["title", "publication_date", "description", "author"]
+
+        labels = { 
+            "title": "Title (required)",
+            "publication_date": "Publication Date (required)",
+            "description": "Description (optional)",
+            "author": "Author (required)",
+        }
+
         help_texts = {
             "title": "Enter the title of the book.",
             "publication_date": "Enter the publication date.",

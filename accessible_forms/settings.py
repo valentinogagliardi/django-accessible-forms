@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.forms",
     "common",
-    "books"
+    "books",
 ]
 
 FORM_RENDERER = "common.renderers.FormRenderer"
