@@ -1,0 +1,15 @@
+[project]
+name = "django-accessible-forms"
+version = "0.0.0"
+dependencies = [
+    "django"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-django"
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "accessible_forms.settings"
