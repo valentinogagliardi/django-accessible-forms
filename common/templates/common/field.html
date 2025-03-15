@@ -1,5 +1,4 @@
 
-{% if field.use_fieldset %}</fieldset>{% endif %}
 {% if field.use_fieldset %}
   <fieldset{% if field.help_text and field.auto_id and "aria-describedby" not in field.field.widget.attrs %} aria-describedby="{{ field.auto_id }}_helptext"{% endif %}>
   {% if field.label %}{{ field.legend_tag }}{% endif %}
@@ -10,10 +9,7 @@
 {{ field }}
 <ul id="{% if field.auto_id %}{{ field.auto_id }}_{% endif %}errorlist" class="errorlist">
     {% for error in field.errors %}
-      <li class="error">
-        <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 24 24" class="error-icon"><path d="M12.984 12.984v-6h-1.969v6h1.969zM12.984 17.016v-2.016h-1.969v2.016h1.969zM12 2.016q4.125 0 7.055 2.93t2.93 7.055-2.93 7.055-7.055 2.93-7.055-2.93-2.93-7.055 2.93-7.055 7.055-2.93z" fill="currentColor"></path></svg>
-        {{ error }}
-    </li>  
+      <li class="error">{{ error }}</li>  
     {% endfor %}
  </ul>
 {% if field.use_fieldset %}</fieldset>{% endif %}
